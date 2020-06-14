@@ -1,0 +1,30 @@
+
+EXPORT ENV VARIABLES!!!
+
+
+u:meyerhog
+p:teodoro
+
+
+export PGDATABASE=taxi \
+export PGUSER=taxi \
+export PGPASSWORD=taxi
+
+0. Shut down server
+1. Turn on Psql - brew services start postgresql
+2. Migrate -  python manage.py makemigrations && python manage.py migrate
+3. Set env vars - "One at a time"
+4. Create new user - python manage.py createsuperuser
+5. Check postgre database - psql -U postgres '\dt'
+6. Try to runserver again -  python manage.py runserver
+
+
+PS. This means env vars on not set:
+""return TEST_DATABASE_PREFIX + self.connection.settings_dict['NAME']
+TypeError: can only concatenate str (not "NoneType") to str""
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+The above is a hint that enviroment variables have not been set. Always be sure to set enviroment variables
